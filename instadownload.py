@@ -14,13 +14,10 @@ def requests_start_url(start_url):
  
  
 def find_photo_url(requests_url):
-    try:
-        soup = BeautifulSoup(requests_url, 'lxml')
-        photo_url = soup.find("meta", property="og:image")
-        print(photo_url['content'])
-        return photo_url["content"]
-    except:
-        return 'Error occurred while parsing link'
+    soup = BeautifulSoup(requests_url, 'lxml')
+    photo_url = soup.find("meta", property="og:image")
+    print(photo_url['content'])
+    return photo_url["content"]
 
  
 # def downloader(photo_url):
