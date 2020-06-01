@@ -13,7 +13,6 @@ def requests_start_url(start_url):
  
  
 def find_photo_url(requests_url):
-    return requests_url
     try:
         soup = BeautifulSoup(requests_url, 'lxml')
         photo_url = soup.find("meta", property="og:image")
