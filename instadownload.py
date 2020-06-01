@@ -9,15 +9,18 @@ def requests_start_url(start_url):
         return html
     except:
         print('Opps! Occurred error')
-        return None
+        return 'Unknown error occured'
  
  
 def find_photo_url(requests_url):
-    soup = BeautifulSoup(requests_url, 'lxml')
-    photo_url = soup.find("meta", property="og:image")
-    print(photo_url['content'])
-    return photo_url["content"]
- 
+    try:
+        soup = BeautifulSoup(requests_url, 'lxml')
+        photo_url = soup.find("meta", property="og:image")
+        print(photo_url['content'])
+        return photo_url["content"]
+    except:
+        return 'Unknown error occured'
+
  
 # def downloader(photo_url):
 #     #extract some character of photo_url in order to name the photo 
