@@ -7,7 +7,7 @@ def requests_start_url(start_url):
         response = requests.get(start_url)
         html = response.text
         return html
-    except RequestException:
+    except:
         print('Opps! Occurred error')
         return None
  
