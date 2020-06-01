@@ -14,9 +14,9 @@ def requests_start_url(start_url):
  
 def find_photo_url(requests_url):
     try:
-        soup = BeautifulSoup(requests_url, 'lxml')
+        soup = BeautifulSoup(requests_url)
         photo_url = soup.find("meta", property="og:image")
-        return str(photo_url)
+        return photo_url["content"]
     except Exception as e:
         return str(e)
 
@@ -34,6 +34,7 @@ def find_photo_url(requests_url):
  
  
 def main(url):
+    print(url)
     requests_url = requests_start_url(url)
     photo_url = find_photo_url(requests_url)
     return photo_url
