@@ -14,13 +14,12 @@ def requests_start_url(start_url):
  
 def find_photo_url(requests_url):
     return requests_url
-#     try:
-#         soup = BeautifulSoup(requests_url, 'lxml')
-#         photo_url = soup.find("meta", property="og:image")
-#         print(photo_url['content'])
-#         return photo_url["content"]
-#     except Exception as e:
-#         return str(e)
+    try:
+        soup = BeautifulSoup(requests_url, 'lxml')
+        photo_url = soup.find("meta", property="og:image")
+        return photo_url["content"]
+    except Exception as e:
+        return str(e)
 
  
 # def downloader(photo_url):
