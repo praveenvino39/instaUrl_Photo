@@ -9,7 +9,8 @@ def requests_start_url(start_url):
         return html
     except:
         print('Opps! Occurred error')
-        return 'Unknown error occured'
+        return 'Error occurred while requesting given url'
+
  
  
 def find_photo_url(requests_url):
@@ -19,7 +20,7 @@ def find_photo_url(requests_url):
         print(photo_url['content'])
         return photo_url["content"]
     except:
-        return 'Unknown error occured'
+        return 'Error occurred while parsing link'
 
  
 # def downloader(photo_url):
