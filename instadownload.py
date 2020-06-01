@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def async requests_start_url(start_url):
+def requests_start_url(start_url):
     try:
         response = requests.get(start_url)
         html = response.content
@@ -35,7 +35,7 @@ def find_photo_url(requests_url):
  
 def main(url):
     print(url)
-    requests_url = await requests_start_url(url)
+    requests_url = requests_start_url(url)
     #photo_url = find_photo_url(requests_url)
     return requests_url
     # downloader(photo_url)
