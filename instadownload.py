@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 def async requests_start_url(start_url):
     try:
         response = requests.get(start_url)
-        html = response.text
+        html = response.content
         return html
     except:
         print('Opps! Occurred error')
