@@ -14,8 +14,8 @@ def requests_start_url(start_url):
  
 def find_photo_url(requests_url):
     try:
-        soup = BeautifulSoup(requests_url)
-        photo_url = soup.find("meta", property="og:image")
+        soup = BeautifulSoup(requests_url, 'html.parser')
+#         photo_url = soup.find("meta", property="og:image")
         return photo_url["content"]
     except Exception as e:
         return str(e)
